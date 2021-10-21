@@ -5,7 +5,6 @@ using System.Text.Json;
 ILoggerFactory loggerFactory = LoggerFactory.Create(loggingBuilder =>
 {
     loggingBuilder.ClearProviders();
-    //loggingBuilder.AddConsole();
     loggingBuilder.AddJsonConsole(jsonConsoleFormatterOptions =>
     {
         jsonConsoleFormatterOptions.IncludeScopes = true;
@@ -20,3 +19,4 @@ ILoggerFactory loggerFactory = LoggerFactory.Create(loggingBuilder =>
 ILogger<Program> logger = loggerFactory.CreateLogger<Program>();
 logger.LogInformation(new EventId(10, "Issue Ticket"), "Issuing Ticket, Ticket Number: {TicketNumber}, PNR: {PNR}", 4911004983137, "JFFB3");
 
+Console.ReadLine();
